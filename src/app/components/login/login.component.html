@@ -1,0 +1,65 @@
+<div class="main-container">
+  <div class="form-container shadow">
+    <!-- Logo -->
+    <div class="logo">
+      <img src="../assets/Klandimg_nobg_clean.png" alt="KLand Logo">
+    </div>
+
+    <!-- Heading -->
+    <h2 class="title">ENTER YOUR EMAIL TO CONTINUE</h2>
+
+    <!-- Login Form -->
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <!-- Email -->
+      <div class="form-group">
+        <input type="email" class="form-control" placeholder="Email" formControlName="email" />
+        <small class="text-danger" *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+          <span *ngIf="loginForm.get('email')?.errors?.['required']">Email is required.</span>
+          <span *ngIf="loginForm.get('email')?.errors?.['email']">Enter a valid email.</span>
+        </small>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group password-container">
+        <input
+          [type]="showPassword ? 'text' : 'password'"
+          class="form-control"
+          placeholder="Password"
+          formControlName="password"
+        />
+        <span class="toggle-password" (click)="togglePassword()">
+          <img *ngIf="showPassword" src="../assets/eye_open.svg" />
+          <img *ngIf="!showPassword" src="../assets/eye_close.svg" />
+        </span>
+
+        <small class="text-danger" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+          <span *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</span>
+          <span *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters.</span>
+        </small>
+      </div>
+
+      <!-- Forgot Password -->
+      <div class="forgot-password">
+        <a href="#">Forgot password?</a>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" class="btn btn-login">Login</button>
+    </form>
+
+    <!-- Footer -->
+    <p class="register-text">
+      Don’t have an account? <a href="#">Create Account</a>
+    </p>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast-container position-fixed top-0 end-0 p-3">
+  <div id="loginToast" class="toast align-items-center border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body" id="toastMessage"></div>
+      <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>

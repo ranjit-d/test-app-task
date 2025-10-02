@@ -1,0 +1,261 @@
+.dashboard-container {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.dashboard-header {
+  background: #009688;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.dashboard-header .logo {
+  width: 110px;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+}
+
+.dashboard-header h1 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.dashboard-header p {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.menu-btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.profile-card {
+  background: white;
+  box-shadow: 0px 3px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+}
+
+.profile-info .avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.dashboard-content {
+  display: flex;
+  margin: 20px;
+  height: calc(100vh - 300px); /* Make content area fit nicely */
+}
+
+.sidebar {
+  width: 20%;
+  padding: 20px;
+  background: #f8f8f8;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* push logout down */
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.logout-section {
+  margin-top: auto;
+}
+
+.logout {
+  color: red;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.personal-info {
+  flex: 1;
+  margin-left: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 3px 8px rgba(0,0,0,0.1);
+  overflow-y: auto;
+}
+
+.personal-info h2 {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.profile-summary {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-summary .avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+/* Grid Layout for Form */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px 20px; /* row gap, column gap */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+//   font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+      outline: none;
+}
+
+/* Phone Input Styling */
+.phone-group .phone-input {
+  display: flex;
+  gap: 10px;
+}
+
+.phone-code {
+  width: 70px;
+}
+
+.phone-number {
+  flex: 1;
+}
+
+/* Make Save Button full width */
+.full-width {
+  grid-column: span 2; /* take both columns */
+}
+
+.btn-save {
+  width: 100%;
+  background: #009688;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-save:hover {
+  background: #00796b;
+}
+
+.dashboard-footer {
+  background: #009688;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 30px;
+}
+
+.footer-top h3 {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.quick-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.quick-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.footer-bottom .privacy {
+  text-align: left;
+  font-size: 14px;
+}
+
+.footer-bottom .privacy a {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: white;
+  text-decoration: none;
+}
+
+.footer-bottom .social {
+  text-align: center;
+}
+
+.footer-bottom .social img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgb(95 178 174);
+  padding: 5px;
+}
+
+.footer-bottom .presented {
+  text-align: right;
+}
+
+.footer-bottom .presented img {
+  width: 110px;
+  margin-top: 5px;
+}
+
