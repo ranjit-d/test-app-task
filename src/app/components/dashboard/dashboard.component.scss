@@ -1,3 +1,6 @@
+/* ======================== */
+/* DASHBOARD BASE STYLES */
+/* ======================== */
 .dashboard-container {
   font-family: Arial, sans-serif;
   color: #333;
@@ -39,6 +42,9 @@
   cursor: pointer;
 }
 
+/* ======================== */
+/* PROFILE CARD */
+/* ======================== */
 .profile-card {
   background: white;
   box-shadow: 0px 3px 8px rgba(0,0,0,0.1);
@@ -59,12 +65,18 @@
   margin-right: 15px;
 }
 
+/* ======================== */
+/* CONTENT LAYOUT */
+/* ======================== */
 .dashboard-content {
   display: flex;
   margin: 20px;
-  height: calc(100vh - 300px); /* Make content area fit nicely */
+  height: calc(100vh - 300px);
 }
 
+/* ======================== */
+/* SIDEBAR */
+/* ======================== */
 .sidebar {
   width: 20%;
   padding: 20px;
@@ -72,7 +84,7 @@
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* push logout down */
+  justify-content: space-between;
 }
 
 .sidebar ul {
@@ -88,6 +100,11 @@
   text-decoration: none;
   color: #333;
   font-weight: 500;
+  transition: 0.2s;
+}
+
+.sidebar ul li a:hover {
+  color: #009688;
 }
 
 .logout-section {
@@ -100,6 +117,13 @@
   text-decoration: none;
 }
 
+.logout:hover {
+  text-decoration: underline;
+}
+
+/* ======================== */
+/* PERSONAL INFO SECTION */
+/* ======================== */
 .personal-info {
   flex: 1;
   margin-left: 20px;
@@ -128,11 +152,13 @@
   margin-right: 15px;
 }
 
-/* Grid Layout for Form */
+/* ======================== */
+/* FORM GRID */
+/* ======================== */
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 15px 20px; /* row gap, column gap */
+  gap: 15px 20px;
 }
 
 .form-group {
@@ -141,7 +167,6 @@
 }
 
 .form-group label {
-//   font-weight: bold;
   margin-bottom: 5px;
 }
 
@@ -150,10 +175,16 @@
   border: 1px solid #ddd;
   border-radius: 6px;
   font-size: 14px;
-      outline: none;
+  outline: none;
 }
 
-/* Phone Input Styling */
+.form-group input:focus {
+  border-color: #009688;
+}
+
+/* ======================== */
+/* PHONE INPUT */
+/* ======================== */
 .phone-group .phone-input {
   display: flex;
   gap: 10px;
@@ -167,9 +198,11 @@
   flex: 1;
 }
 
-/* Make Save Button full width */
+/* ======================== */
+/* SAVE BUTTON */
+/* ======================== */
 .full-width {
-  grid-column: span 2; /* take both columns */
+  grid-column: span 2;
 }
 
 .btn-save {
@@ -181,12 +214,16 @@
   border-radius: 6px;
   font-size: 16px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .btn-save:hover {
   background: #00796b;
 }
 
+/* ======================== */
+/* FOOTER */
+/* ======================== */
 .dashboard-footer {
   background: #009688;
   color: white;
@@ -259,3 +296,259 @@
   margin-top: 5px;
 }
 
+/* ======================== */
+/* LOGOUT CONFIRM POPUP */
+/* ======================== */
+.logout-popup {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  animation: fadeIn 0.2s ease-in;
+}
+
+.logout-popup-content {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  text-align: center;
+  width: 360px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: popupFade 0.25s ease-in-out;
+}
+
+.logout-icon {
+  background-color: #ffecec;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px auto;
+}
+
+.logout-icon img {
+  width: 28px;
+  height: 28px;
+}
+
+.logout-popup-content p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  color: #333;
+  font-weight: 500;
+}
+
+.logout-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.cancel-btn {
+  background-color: white;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.cancel-btn:hover {
+  background-color: #f2f2f2;
+}
+
+.logout-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* Animations */
+@keyframes popupFade {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ===================== */
+/* RESPONSIVE SIDEBAR */
+/* ===================== */
+@media (max-width: 1023px) {
+  .dashboard-content {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    width: 70%;
+    height: 100%;
+    background: #f8f8f8;
+    z-index: 1500;
+    transition: 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+    padding: 20px;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  /* Dim background when sidebar is open */
+  .dashboard-container::after {
+    content: "";
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+
+  .sidebar.active ~ .personal-info,
+  .sidebar.active ~ .dashboard-footer {
+    pointer-events: none;
+    opacity: 0.3;
+  }
+}
+
+/* ===================== */
+/* MOBILE FORM STYLING */
+/* ===================== */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-summary {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-summary .avatar {
+    margin-bottom: 10px;
+  }
+
+  .personal-info {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 22px;
+  }
+
+  .dashboard-header p {
+    font-size: 13px;
+  }
+}
+
+/* ===================== */
+/* SMALL DEVICES (phones) */
+/* ===================== */
+@media (max-width: 480px) {
+  .dashboard-header .logo {
+    width: 80px;
+    top: 15px;
+  }
+
+  .btn-save {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .form-group input {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .sidebar {
+    width: 80%;
+  }
+}
+
+/* =============================== */
+/* RESPONSIVE LOGOUT POPUP */
+/* =============================== */
+@media (max-width: 768px) {
+  .logout-popup-content {
+    width: 85%;
+    padding: 20px 25px;
+    border-radius: 10px;
+  }
+
+  .logout-popup-content p {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .logout-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cancel-btn,
+  .logout-btn {
+    width: 100%;
+    font-size: 15px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logout-popup-content {
+    width: 90%;
+    padding: 18px 20px;
+  }
+
+  .logout-icon {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 15px;
+  }
+
+  .logout-popup-content p {
+    font-size: 14px;
+  }
+
+  .cancel-btn,
+  .logout-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

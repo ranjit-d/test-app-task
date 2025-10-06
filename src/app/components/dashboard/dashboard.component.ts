@@ -9,6 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class DashboardComponent implements OnInit {
   //  user: any = {};
+ showLogoutPopup = false;
 user = { firstName: 'Abc',
    lastName: 'User', 
    email:'abc@yopmail.com', 
@@ -30,5 +31,28 @@ user = { firstName: 'Abc',
     alert("Update user form")
   console.log('Updated user:', this.user);
    }
-   logout() { this.auth.logout()}
+   logout() { 
+    this.showLogoutPopup = true;
+    // const confirmlogout=window.confirm("are you sure you want to logout")
+    // if(confirmlogout){
+    //    this.auth.logout()
+    // }else{
+
+    // }
+    
+  }
+   confirmLogout() {
+    this.showLogoutPopup = false;
+    this.auth.logout(); // redirects to login
+  }
+
+  cancelLogout() {
+    this.showLogoutPopup = false; // hide popup
+  }
+  menuOpen = false;
+
+toggleMenu() {
+  this.menuOpen = !this.menuOpen;
+}
+
 }
