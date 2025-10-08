@@ -346,7 +346,7 @@
 .logout-buttons {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  // gap: 15px;
 }
 
 .cancel-btn {
@@ -402,6 +402,23 @@
 /* RESPONSIVE SIDEBAR */
 /* ===================== */
 @media (max-width: 1023px) {
+
+  .form-grid {
+    grid-template-columns: 1fr; /* stack everything */
+    gap: 12px;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  .phone-group .phone-input {
+    flex-direction: row; /* keep code + number side by side */
+  }
+
+  .full-width {
+    grid-column: 1; /* save button takes full width */
+  }
   .dashboard-content {
     flex-direction: column;
   }
@@ -452,6 +469,7 @@
 @media (max-width: 768px) {
   .form-grid {
     grid-template-columns: 1fr;
+    
   }
 
   .profile-summary {
@@ -518,8 +536,8 @@
   }
 
   .logout-buttons {
-    flex-direction: column;
-    gap: 10px;
+    // flex-direction: column;
+    gap: 15px;
   }
 
   .cancel-btn,
@@ -552,3 +570,5 @@
     padding: 10px;
   }
 }
+
+
